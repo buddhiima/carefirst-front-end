@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
-    <div className="container">
-        <div className="row">
+    <div className="container footer-bg">
+        <div className="row" style={{marginTop:"2rem"}}>
             <div className="col col-lg-4">
               <ul>
                 <li >
@@ -29,7 +29,7 @@ function App() {
                 /> 
             </div>
             <div className="col col-lg-4 d-flex justify-content-end">
-                <ul class="mr-0 mt-2 mt-lg-0">
+                <ul class="mr-0 mt-2 mt-lg-0 address">
                   <li>10, Spooner st,</li>
                   <li >Colombo 2</li>
                   <li >011-2865984</li>
