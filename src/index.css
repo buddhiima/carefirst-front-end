@@ -33,3 +33,16 @@ ul {
   top: 20rem;
   z-index: 1;
 }
+
+.cart-icon {
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+.address {
+  margin-right: 1.7rem;
+}
+
+.footer-bg {
+  background-color: #f8f9fa;
+}

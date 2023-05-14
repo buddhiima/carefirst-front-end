@@ -1,8 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Navbar from './components/Navbar.js';
-import Footer from './components/Footer.js'
-import backdrop from './assets/backdrop.png';
+import { useEffect } from "react";
+import {Routes, Route, Link} from 'react-router-dom'
+import Layout from './components/Layout';
+import Home from './components/Home.js'
+import Dashboard from './components/staff/Products'
+import Products from "./components/staff/Products";
 
 function App() {
 
@@ -13,21 +15,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar/>
-      </header>
-      <body>
-        <div className="container">
-          <div className="row">
-            <button type="button" class=" call-to-action-btn btn btn-primary btn-lg">ORDER NOW</button>
-            <img
-            src={backdrop}  
-            alt="Brand logo"  
-          /> 
-          </div>
-        </div>
-        <Footer/>
-      </body>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route path="/" element={<Home/>}></Route>
+              <Route path="/staff/dashboard" element={<Dashboard/>}></Route>
+              <Route path="/staff/products" element={<Products/>}></Route>
+          </Route>
+      </Routes>
     </div>
   );
 }
