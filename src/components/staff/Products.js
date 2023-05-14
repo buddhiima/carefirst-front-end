@@ -3,14 +3,18 @@ import api from '../../api/axiosConfig'
 import NavbarStaff from './NavbarStaff';
 import Footer from '../Footer'
 import DataTable from 'react-data-table-component'
-import { Crossy } from 'react-bootstrap-icons';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import AddProductModal from './AddProductModal';
 
 const Products = () => {
 
     const [products, setProducts] = useState();
-    const [product, setProduct] = useState();
     const [records, setRecords] = useState();
     const [filterRecords, setFilterRecords] = useState();
+    const[openAddProductsModal, setOpenAddProductsModal] = useState(false);
 
     const column = [
         {name: "Product ID", selector: row => row.id},
@@ -21,7 +25,7 @@ const Products = () => {
     ]
 
     useEffect(() => {
-        document.title = 'Dashboard'
+        document.title = 'Products'
         getProducts();
     }, [])
 
@@ -51,11 +55,22 @@ const Products = () => {
             </header>
 
             <body>
-                <div className="container">
-                    <div className="row">
-                        <h2 className='display-4' style={{paddingTop:"2rem"}}>Products</h2>
-                    </div>
-                    <div className="row">
+                <Container>
+                    <Row style={{marginTop:"2rem"}}>
+                        <Col>
+                            <p className="display-4" style={{fontSize:"3rem", marginLeft:"1rem"}}>PRODUCTS</p>
+                        </Col>
+                        <Col>
+                            <Button variant="success" style={{marginLeft:"19.5rem", marginTop:"1.5rem"}} onClick={()=>{setOpenAddProductsModal(true)}}>+ New</Button>
+                        </Col>
+                        {openAddProductsModal && <AddProductModal setOpenAddProductsModal={setOpenAddProductsModal} />}
+                    </Row>
+                    <Row>
+                        <Col>
+
+                        </Col>
+                    </Row>
+                    <Row>
                         <div style={{padding:"10px 10%", backgroundColor:"white"}}>
                             <div style={{display:"flex", justifyContent:"right"}}>
                                 <input type="text" placeholder='Search' onChange={handleFilter} style={{padding:"6px 10px"}}/>
@@ -67,12 +82,12 @@ const Products = () => {
                         pagination
                         selectableRows
                         ></DataTable>
-                    </div>
-                </div>
+                    </Row>
+                </Container>
 
-                <div className="row">
+                <Row>
                     <Footer/>
-                </div>
+                </Row>
                 
             </body>
         </>
