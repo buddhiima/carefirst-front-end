@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import AddProductModal from './AddProductModal';
 
+
 const Products = () => {
 
     const [products, setProducts] = useState();
@@ -17,11 +18,13 @@ const Products = () => {
     const[openAddProductsModal, setOpenAddProductsModal] = useState(false);
 
     const column = [
-        {name: "Product ID", selector: row => row.id},
+        {name:"", selector: row => <img style={{ width: 60, height: 60 }} src={row.imageURL} alt="img"></img> },
+        {name:"Product ID", selector: row => row.id},
         {name:"Name", selector: row => row.name, sortable: true},
         {name:"Description", selector: row => row.description},
         {name:"Price", selector: row => row.price, sortable: true},
-        {name:"Prescription Drug", selector: row => row.prescription_drug.toString(), sortable: true}
+        {name:"Prescription Drug", selector: row => row.prescription_drug.toString(), sortable: true},
+        
     ]
 
     useEffect(() => {
@@ -63,7 +66,7 @@ const Products = () => {
                         <Col>
                             <Button variant="success" style={{marginLeft:"19.5rem", marginTop:"1.5rem"}} onClick={()=>{setOpenAddProductsModal(true)}}>+ New</Button>
                         </Col>
-                        {openAddProductsModal && <AddProductModal setOpenAddProductsModal={setOpenAddProductsModal} />}
+                        {openAddProductsModal && <AddProductModal setOpenAddProductsModal={setOpenAddProductsModal}/>}
                     </Row>
                     <Row>
                         <Col>
@@ -88,7 +91,6 @@ const Products = () => {
                 <Row>
                     <Footer/>
                 </Row>
-                
             </body>
         </>
     )
