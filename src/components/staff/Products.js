@@ -130,7 +130,7 @@ const Products = () => {
             selectedProduct={selectedRows[0]}
           />
         )}{" "}
-        <Container className="product-main-section">
+        <Container className="main-section">
           <Row style={{ marginTop: "2rem" }}>
             <Col>
               <p

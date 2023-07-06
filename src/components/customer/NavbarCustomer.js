@@ -21,7 +21,7 @@ const NavbarCustomer = () => {
                     navbarScroll
                 >
                 <NavLink className="nav-link" to="/">HOME</NavLink>
-                <NavLink className="nav-link" to="/">BROWSE</NavLink>
+                <NavLink className="nav-link" to="/customer/browse">BROWSE</NavLink>
                 <NavLink className="nav-link" to="/">ABOUT US</NavLink>
                 </Nav>
                 <NavLink className="nav-link" to="/">ACCOUNT</NavLink>
