@@ -14,6 +14,7 @@ function AddProductModal({setOpenAddProductsModal, createProduct}) {
         prescription_drug: false,
         price: "",
         imageURL: "",
+        isDeleted: false
     });
 
     function handleFormChange (e) {
@@ -56,6 +57,7 @@ function AddProductModal({setOpenAddProductsModal, createProduct}) {
             formData.append("prescription_drug", product.prescription_drug)
             formData.append("price", product.price)
             formData.append("imageURL", product.imageURL)
+            formData.append("isDeleted", product.isDeleted)
 
             api({
                 method: "post",

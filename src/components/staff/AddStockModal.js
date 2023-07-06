@@ -52,6 +52,8 @@ function AddStockModal({ setOpenStockModel, selectedProduct = null }) {
     price: "",
     batchnumber: "",
     qty: "",
+    sold: 0,
+    remaining: "",
     isDeleted: false,
     reason: "",
   });
@@ -63,6 +65,8 @@ function AddStockModal({ setOpenStockModel, selectedProduct = null }) {
     price: "",
     batchnumber: "",
     qty: "",
+    sold: 0,
+    remaining: "",
     isDeleted: false,
     reason: "",
   });
@@ -114,6 +118,8 @@ function AddStockModal({ setOpenStockModel, selectedProduct = null }) {
         price: stock.price,
         batchnumber: stock.batchnumber,
         qty: stock.qty,
+        sold: 0,
+        remaining: stock.qty,
         reason: stock.reason,
       });
 
@@ -160,8 +166,8 @@ function AddStockModal({ setOpenStockModel, selectedProduct = null }) {
   }
 
   return (
-    <div className="modalBackground" style={{ width: "100%" }}>
-      <div className="modalContainer" style={{ width: "auto", margin: "25px" }}>
+    <div className="modalBackground" style={{ width: "100%" , height: "70%"}}>
+      <div className="modalContainer" style={{ width: "auto", margin: "25px" , height: "130%"}}>
         <div className="titleCloseBtn">
           <button
             onClick={() => {

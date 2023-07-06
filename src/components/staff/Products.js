@@ -25,6 +25,7 @@ const Products = () => {
   const tableRef = useRef(null);
 
   const column = [
+    { name: "", selector: (row) => <img src={row.imageURL} style={{ width: 60, height: 60 }} slt="img"/> },
     { name: "Product ID", selector: (row) => row.id },
     { name: "Name", selector: (row) => row.name, sortable: true },
     { name: "Description", selector: (row) => row.description },
@@ -37,6 +38,9 @@ const Products = () => {
       name: "Prescription Drug",
       selector: (row) => row.prescription_drug.toString(),
       sortable: true,
+    },
+    { name: "Discontinued", selector: (row) => row.isDeleted.toString(),
+      sortable: true, 
     },
   ];
 
@@ -126,7 +130,7 @@ const Products = () => {
             selectedProduct={selectedRows[0]}
           />
         )}{" "}
-        <Container>
+        <Container className="product-main-section">
           <Row style={{ marginTop: "2rem" }}>
             <Col>
               <p

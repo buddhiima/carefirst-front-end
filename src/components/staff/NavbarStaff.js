@@ -23,7 +23,6 @@ const NavbarStaff = () => {
                 <NavLink className="nav-link" to="/">HOME</NavLink>
                 <NavLink className="nav-link" to="/">ORDERS</NavLink>
                 <NavLink className="nav-link" to="/staff/products">PRODUCTS</NavLink>
-                <NavLink className="nav-link" to="/staff/stock">STOCK</NavLink>
                 </Nav>
                 <NavLink className="nav-link" to="/">LOGOUT</NavLink>
                 <NavLink className="nav-link cart-icon" to="/"><a href="#"><Person/></a></NavLink>
