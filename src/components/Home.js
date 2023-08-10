@@ -20,9 +20,9 @@ const Home = () => {
       </header>
 
       <body>
-        <div className="container">
+        <div className="container main-section">
           <div className="row">
-              <button type="button" class=" call-to-action-btn btn btn-primary btn-lg" onClick={routeChange}>ORDER NOW</button>
+              <button type="button" class="call-to-action-btn btn btn-primary btn-lg" onClick={routeChange}>ORDER NOW</button>
               <img
               src={backdrop}  
               alt="Brand logo"  

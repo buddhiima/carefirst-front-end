@@ -18,8 +18,17 @@ function AddProductModal({setOpenAddProductsModal, createProduct}) {
     });
 
     function handleFormChange (e) {
+        const {value, type, checked, id} = e.target
+        
         const newProduct = {...product}
-        newProduct[e.target.id] = e.target.value
+
+        if(type === "checkbox") {
+            newProduct[e.target.id] = e.target.checked
+        }
+        else {
+            newProduct[e.target.id] = e.target.value
+        }
+
         setProduct(newProduct)
         console.log('newProduct ', newProduct)
     }
@@ -126,7 +135,7 @@ function AddProductModal({setOpenAddProductsModal, createProduct}) {
                         <Form.Label>Prescription Drug</Form.Label>
                     </Col>
                     <Col>
-                        <Form.Check type="checkbox" id="prescription_drug" checked={product.prescription_drug} value={product.prescription_drug} onChange={(e)=>handleFormChange(e)}/>
+                        <Form.Check type="checkbox" id="prescription_drug" checked={product.prescription_drug} onChange={(e)=>handleFormChange(e)}/>
                     </Col>
                 </Row>
                 <Row style={{marginBottom:"1rem"}}>
